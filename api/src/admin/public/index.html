@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WA Bot Brain - Admin</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🧠 WA Bot Brain</div>
+    <div class="meta">
+      <span id="meta-timeout"></span>
+      <span class="dot">•</span>
+      <span id="meta-cs"></span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <div class="row">
+          <input id="search" class="input" placeholder="Cari nomor (contoh: 62812...)" />
+          <button id="btn-refresh" class="btn">Refresh</button>
+        </div>
+        <div class="hint">Klik user untuk lihat chat. Polling otomatis kalau user sedang dipilih.</div>
+      </div>
+
+      <div id="user-list" class="user-list"></div>
+    </aside>
+
+    <section class="content">
+      <div id="empty" class="empty">
+        <h2>Pilih conversation</h2>
+        <p>Ambil dari list kiri ya kak 😊</p>
+      </div>
+
+      <div id="chat" class="chat hidden">
+        <div class="chat-head">
+          <div>
+            <div class="title">User: <span id="chat-wa"></span></div>
+            <div class="sub">Mode: <span id="chat-mode" class="pill"></span> · Last: <span id="chat-last"></span></div>
+          </div>
+          <div class="actions">
+            <label class="checkbox">
+              <input type="checkbox" id="notifyUser" />
+              <span>Notify user</span>
+            </label>
+            <button id="btn-takeover" class="btn danger">Takeover: HUMAN</button>
+            <button id="btn-release" class="btn">Release: BOT</button>
+          </div>
+        </div>
+
+        <div id="messages" class="messages"></div>
+
+        <form id="send-form" class="send">
+          <input id="send-text" class="input" placeholder="Ketik pesan ke user..." />
+          <button class="btn primary" type="submit">Kirim</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
